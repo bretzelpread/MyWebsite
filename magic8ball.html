@@ -1,0 +1,98 @@
+<html>
+<head>
+<script languague = "JavaScript">
+var rand = -1;
+
+var answers = ["yes", "no", "perhaps", "doubtful", "probably", "depends on who wins the next nba season", "of course", "no chance", "the future is cloudy", "without  a doubt"];
+    
+function random()
+{
+    var rand = -1;
+    var userQ = document.getElementById("question");
+    var myAnswer = document.getElementById("answer");
+    
+
+    //alert(answers[rand]);
+    
+    rand = Math.random()*answers.length;// Math.random return a random decimal between 0         (inclusive) and 1 (exclusive)
+    
+    //rand = rand * 10; // 0.000 and 9.999999
+    
+    // generate a random integer between -10 and 10 inclusive.
+    
+    //rand = rand * 10 // Math.random() times number or options
+    
+    rand = Math.floor(rand); // returns the nearest integer that is LESS than the parameter,     rand contains a value between 0-9 (inclusive)
+    //rand = rand - 10; //1-10
+	//alert(rand);
+    if (userQ.value.length == 0)
+    {
+        // nothing is in the question textbox
+    myAnswer.value = "Please type a question first.";
+    }
+    else
+    {
+        myAnswer.value = answers[rand];
+        if (rand == 9)
+        {
+                document.getElementById("player").play();
+        }
+    }
+}
+    
+ 
+    
+function reset ()
+{
+   document.getElementById("answer").value = "";
+    //alert("hello");
+}
+    
+    
+
+</script>
+</head>
+    
+<body>
+<center>
+<h1>Magic Tester</h1>
+<input id = "question" type = "text" size="80" onfocusin = "reset()"  /> <br/><br/><br/>
+<input type="button" value="Click here" onClick="random()"/><br/><br/>
+<input id="answer" type="text" size="80" readonly = true /><br/>
+<audio id="player" src="sounds/glitter_sound_effect_-2145644953253130741.mp3"> </audio>
+    Click here to <a href="index.html">return to the main page.</a>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
