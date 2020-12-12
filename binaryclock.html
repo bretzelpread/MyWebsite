@@ -1,0 +1,137 @@
+<html>
+<head>
+<script language ="javaScript">
+var number = 0;
+var autoClicked = false
+function addOne()
+{
+   
+    //write code that increments the number var by one. and alert it.
+    number = number + 1;
+    //test if number equals 16, and if so, reset to zero.
+    if(number == 16)
+    {
+        number = 0; // resets number to 0
+    }
+
+    flipLEDs();
+    
+    document.getElementById("count").value = number //.value = changing content of something on page
+}
+//.value = searching for text box
+
+function flipLEDs()
+{
+    onesPlace();
+    twosPlace();
+    foursPlace();
+    eightsPlace();
+} 
+    
+function onesPlace() 
+{    
+    if (number % 2 == 1)
+    {
+        document.getElementById("ones").src = "images/ledON.png";   
+    }
+    else
+    {
+        document.getElementById("ones").src = "images/ledOFF.png";
+    }
+}
+function twosPlace() 
+{    
+    if (number % 4 > 1)
+    {
+        document.getElementById("twos").src = "images/ledON.png";   
+    }
+    else
+    {
+        document.getElementById("twos").src = "images/ledOFF.png";
+    }
+}
+function foursPlace() 
+{    
+    if (number % 8 > 3)
+    {
+        document.getElementById("fours").src = "images/ledON.png";   
+    }
+    else
+    {
+        document.getElementById("fours").src = "images/ledOFF.png";
+    }
+}
+function eightsPlace() 
+{    
+    if (number % 16 > 7)
+    {
+        document.getElementById("eights").src = "images/ledON.png";   
+    }
+    else
+    {
+        document.getElementById("eights").src = "images/ledOFF.png";
+    }
+}
+/*    
+    
+var number = 0; 
+var onesPlace = 
+    docu..... number++; 
+    if (number % 2 == 1 ) (number is odd) 
+{
+    onesPlace.src = "images.ledON.jpg"; 
+} 
+    else  // comp's number (number is even) 
+{ 
+    onesPlace.src = "images.ledOFF.jpg";
+} 
+    function twosPlace() 
+{
+    if (number % 4 < 2 )(number is odd) 
+{ 
+    onesPlace.src = "images.ledOFF.jpg";
+}
+       else
+         // comp's number (number is even) 
+{ 
+   onesPlace.src = "images.ledON.jpg";
+     } 
+}
+*/
+    </script>
+    <head>  
+    <body>
+    <center>
+<h1> Binary Counter </h1>
+ 
+<input type = "button" value = "Add One" onclick="addOne()"/>
+<input id="runStop" type = "button" value = "Run" onclick="auto()"/><br/><br/>
+<input id="count" type = "text" size ="20" style="text-align:center">
+
+
+<div id="first" style="position:absolute; top:150; left: 600">
+2^0<br/>
+    <img id="ones" src="images/ledOFF.png" width="50"/>
+</div>
+
+<div id="second" style="position:absolute; top:150; left: 500">
+2^1<br/>
+    <img id="twos" src="images/ledOFF.png" width="50"/>
+</div>
+
+<div id="third" style="position:absolute; top:150; left: 400">
+2^2<br/>
+    <img id="fours" src="images/ledOFF.png" width="50"/>
+</div>
+
+<div id="fourth" style="position:absolute; top:150; left: 300">
+2^3<br/>
+   <img id="eights" src="images/ledOFF.png" width="50"/>
+</div>
+
+
+
+</center>
+</body>
+        
+                
