@@ -1,0 +1,103 @@
+<html>
+<head> 
+<script language="JavaScript">
+
+var partsOfSpeech = ["Enter dog name","Enter adjective","Enter Adjective","Enter girl dog name","Enter synonym for 'leave him'","Enter superpower","Enter evil dog name","Enter food"];
+var answers;
+var story = ["A dog named","went out on a walk. He was very","and",". He wondered what would happen if his girlfriend,",", decided one day that she would",". Scared that this would happen, he decided to obtain the superpower of","to defeat his evil nemesis,","and through his immense", ", he won the day! After going home, he decided to eat"];
+var count = 0;
+
+function prompt()
+    {
+       document.getElementById("userEnter").style.visibility="visible";
+document.getElementById("story").style.visibility = "hidden";
+document.getElementById("response").value = partsOfSpeech[count];
+    }
+function getWords()
+{
+    alert("hello");
+    partsOfSpeech[0] = document.getElementById("response0").value;
+	partsOfSpeech[1] = document.getElementById("response1").value;
+	partsOfSpeech[2] = document.getElementById("response2").value;
+	partsOfSpeech[3] = document.getElementById("response3").value;
+	partsOfSpeech[4] = document.getElementById("response4").value;
+	partsOfSpeech[5] = document.getElementById("response5").value;
+	partsOfSpeech[6] = document.getElementById("response6").value;
+	partsOfSpeech[7] = document.getElementById("response7").value;   
+    alert("hi");
+    alert(partsOfSpeech);
+	var answers = "";
+	var i;
+}
+    
+	// fill the variable answer with an element of story followed by an element of partsOfSpeech.
+	// traverse both lists until all elements of each list are in answer. 
+	// Alert answer when finished.
+    for ( i = 0; i < answers.length; i++) 
+    {
+        answers = answers + story[i];
+        answers = answers + partsOfSpeech[i];
+    }
+    alert("obamna");
+            //document.getElementById("story").innerHTML = answers;
+   
+/*    var wordBox = document.getElementById("response")
+    answers[count] = wordBox.value
+    
+    count++;
+    
+    if (count < partsOfSpeech.length) // theres another prompt coming
+    {
+        prompt();
+    }
+    else // done entering words
+    {
+        count = 0;
+        document.getElementById("story").innerHTML = displayStory();
+    }*/
+}
+
+function displayStory()
+{
+	var answers = "";
+	var i;
+	
+    
+	// fill the variable answer with an element of story followed by an element of partsOfSpeech.
+	// traverse both lists until all elements of each list are in answer. 
+	// Alert answer when finished.
+    for ( i = 0; i < answers.length; i++)
+        answers = answers + story[i];
+        answers = answers + partsOfSpeech[i]; 
+   
+	return answers;
+}
+//var partsOfSpeech = ["Enter dog name","Enter adjective ","Enter Adjective","Enter girl dog name","Enter synonym for 'leave him'","Enter superpower","Enter evil dog name","Enter food"];
+
+</script>
+</head>
+<body>
+<center> 
+<h1>My MadLib!</h1>
+<input type="button" value="start" onClick="getWords()"/>
+</center>
+<div id="userEnter" style="position:absolute; left:200; top: 100; visibility:visible;">
+	<p id="message"> Please enter  
+	    <input type = "text" id="response0" placeholder="Enter dog name"/>
+		<input type = "text" id="response1" placeholder="Enter adjective"/>	
+        <input type = "text" id="response2" placeholder="Enter Adjective"/> 
+        <input type = "text" id="response3" placeholder="Enter girl dog name"/>
+        <input type = "text" id="response4" placeholder="Enter synonym for 'leave him'"/>  
+        <input type = "text" id="response5" placeholder="Enter superpower"/>  
+        <input type = "text" id="response6" placeholder="Enter evil dog name"/> 
+        <input type = "text" id="response7" placeholder="Enter food"/>  
+
+		</div>
+	
+
+
+    <div id="story"> YEEAAAAAAAAAH </div>
+     
+</body>
+</html>
+   
